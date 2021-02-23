@@ -19,10 +19,13 @@ public class StringUtil {
         int i = 0;
         StringBuilder rainbow = new StringBuilder();
         for (char c : original.toCharArray()) {
-            rainbow.append(colors[i]).append(c);
-            i++;
-            if (i == colors.length) {
-                i = 0;
+            if (c == ' ') continue;
+            else {
+                rainbow.append(colors[i]).append(c);
+                i++;
+                if (i == colors.length) {
+                    i = 0;
+                }
             }
         }
         return rainbow.toString();
