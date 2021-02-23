@@ -7,7 +7,7 @@ import java.util.List;
 
 public class StringUtil {
 
-    public String rainbow(String original) {
+    public static String rainbow(String original) {
         ChatColor[] colors = new ChatColor[]{ChatColor.RED,
                 ChatColor.of("#FF7F00"),
                 ChatColor.YELLOW,
@@ -28,7 +28,7 @@ public class StringUtil {
         return rainbow.toString();
     }
 
-    public List<String> rainbow(List<String> original) {
+    public static List<String> rainbow(List<String> original) {
         List<String> rainbow = new ArrayList<>();
         for (String string : original) {
             rainbow.add(rainbow(string));
@@ -36,7 +36,7 @@ public class StringUtil {
         return rainbow;
     }
 
-    public String[] rainbow(String[] original) {
+    public static String[] rainbow(String[] original) {
         List<String> rainbow = new ArrayList<>();
         for (String string : original) {
             rainbow.add(rainbow(string));
