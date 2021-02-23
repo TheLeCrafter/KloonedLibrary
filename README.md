@@ -1,7 +1,7 @@
 # KloonedLibrary <br>
 [![Java CI with Maven](https://github.com/TheLeCrafter/KloonedLibrary/actions/workflows/maven.yml/badge.svg)](https://github.com/TheLeCrafter/KloonedLibrary/actions/workflows/maven.yml) 
-[![GitHub issues](https://img.shields.io/github/issues/Naereen/StrapDown.js.svg)](https://GitHub.com/TheLeCrafter/KloonedLibrary/issues/) 
-[![GitHub issues-closed](https://img.shields.io/github/issues-closed/Naereen/StrapDown.js.svg)](https://GitHub.com/TheLeCrafter/KloonedLibrary/issues?q=is%3Aissue+is%3Aclosed) <br>
+[![GitHub issues](https://img.shields.io/github/issues/TheLeCrafter/KloonedLibrary.svg)](https://GitHub.com/TheLeCrafter/KloonedLibrary/issues/) 
+[![GitHub issues-closed](https://img.shields.io/github/issues-closed/TheLeCrafter/KloonedLibrary.svg)](https://GitHub.com/TheLeCrafter/KloonedLibrary/issues?q=is%3Aissue+is%3Aclosed) <br>
 A library designed for the Hypixel admin Minikloon. This library can mostly be used to "rainbowify" strings for a Minecraft Spigot/Paper plugin. <br>
 The library will be extended with different functionalities (e.g. controlling armor stands).
 
