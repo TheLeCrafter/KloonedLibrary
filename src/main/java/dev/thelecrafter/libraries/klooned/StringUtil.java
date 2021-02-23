@@ -2,6 +2,9 @@ package dev.thelecrafter.libraries.klooned;
 
 import net.md_5.bungee.api.ChatColor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class StringUtil {
 
     public String rainbow(String original) {
@@ -23,6 +26,22 @@ public class StringUtil {
             }
         }
         return rainbow.toString();
+    }
+
+    public List<String> rainbow(List<String> original) {
+        List<String> rainbow = new ArrayList<>();
+        for (String string : original) {
+            rainbow.add(rainbow(string));
+        }
+        return rainbow;
+    }
+
+    public String[] rainbow(String[] original) {
+        List<String> rainbow = new ArrayList<>();
+        for (String string : original) {
+            rainbow.add(rainbow(string));
+        }
+        return rainbow.toArray(new String[]{});
     }
 
 }

@@ -6,7 +6,7 @@
 
     <groupId>dev.thelecrafter.libraries</groupId>
     <artifactId>klooned</artifactId>
-    <version>1.0</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
 
     <name>KloonedLibrary</name>
@@ -75,5 +75,13 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub TheLeCrafter Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/TheLeCrafter/KloonedLibrary</url>
+        </repository>
+    </distributionManagement>
 
 </project>
