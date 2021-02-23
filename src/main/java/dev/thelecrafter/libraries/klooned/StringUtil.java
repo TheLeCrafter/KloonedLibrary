@@ -7,6 +7,11 @@ import java.util.List;
 
 public class StringUtil {
 
+    /**
+     *
+     * @param original The string you want to 'rainbowify'.
+     * @return The 'rainbowified' string.
+     */
     public static String rainbow(String original) {
         ChatColor[] colors = new ChatColor[]{ChatColor.RED,
                 ChatColor.of("#FF7F00"),
@@ -31,6 +36,11 @@ public class StringUtil {
         return rainbow.toString();
     }
 
+    /**
+     *
+     * @param original The list of strings you want to 'rainbowify'.
+     * @return The list of strings that have been 'rainbowified'.
+     */
     public static List<String> rainbow(List<String> original) {
         List<String> rainbow = new ArrayList<>();
         for (String string : original) {
@@ -39,6 +49,11 @@ public class StringUtil {
         return rainbow;
     }
 
+    /**
+     *
+     * @param original The array of strings you want to 'rainbowify'.
+     * @return The array of strings that have been 'rainbowified'.
+     */
     public static String[] rainbow(String[] original) {
         List<String> rainbow = new ArrayList<>();
         for (String string : original) {
