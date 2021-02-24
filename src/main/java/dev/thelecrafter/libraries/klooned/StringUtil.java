@@ -24,7 +24,9 @@ public class StringUtil {
         int i = 0;
         StringBuilder rainbow = new StringBuilder();
         for (char c : original.toCharArray()) {
-            if (c == ' ') continue;
+            if (c == ' ') {
+                rainbow.append(c);
+            }
             else {
                 rainbow.append(colors[i]).append(c);
                 i++;
@@ -71,7 +73,9 @@ public class StringUtil {
             int i = 0;
             StringBuilder colorized = new StringBuilder();
             for (char c : original.toCharArray()) {
-                if (c == ' ') continue;
+                if (c == ' ') {
+                    colorized.append(c);
+                }
                 else {
                     colorized.append(pattern[i]).append(c);
                     i++;
