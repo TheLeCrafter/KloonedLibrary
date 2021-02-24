@@ -58,7 +58,7 @@ public class FollowingArmorstands {
      * @param player The player the armor stand is currently following.
      * @return Returns if the method was successfully executed.
      */
-    private static boolean removeFollowingArmorStand(Player player) {
+    public static boolean removeFollowingArmorStand(Player player) {
         if (armorStandMap.get(player) == null) return false;
         return armorStandMap.remove(player, armorStandMap.get(player));
     }
