@@ -1,4 +1,4 @@
-package dev.thelecrafter.libraries.klooned.armorstands;
+package dev.thelecrafter.libraries.klooned;
 
 import org.bukkit.Location;
 import org.bukkit.entity.ArmorStand;
