@@ -28,6 +28,7 @@ public class FollowingArmorstands {
      */
     public static boolean addFollowingArmorStand(Player player, ArmorStand stand, Plugin plugin, int radius) {
         if (stand.isDead()) return false;
+        armorStandMap.put(player, stand);
         BukkitTask task = new BukkitRunnable() {
             @Override
             public void run() {
@@ -41,6 +42,7 @@ public class FollowingArmorstands {
                     this.cancel();
                     return;
                 }
+                if (armorStandMap.get(player) == null) this.cancel();
                 if (player.getLocation().distance(stand.getLocation()) > radius) {
                     Vector direction = player.getLocation().subtract(stand.getLocation()).clone().toVector();
                     Location location = stand.getLocation().add(direction.clone().multiply(0.1));

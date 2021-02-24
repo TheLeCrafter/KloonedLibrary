@@ -3,7 +3,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/TheLeCrafter/KloonedLibrary.svg)](https://GitHub.com/TheLeCrafter/KloonedLibrary/issues/) 
 [![GitHub issues-closed](https://img.shields.io/github/issues-closed/TheLeCrafter/KloonedLibrary.svg)](https://GitHub.com/TheLeCrafter/KloonedLibrary/issues?q=is%3Aissue+is%3Aclosed) <br>
 A library designed for the Hypixel admin Minikloon. This library can mostly be used to "rainbowify" strings for a Minecraft Spigot/Paper plugin. <br>
-The library will be extended with different functionalities (e.g. controlling armor stands).
+You can also use this library to control armor stands that should follow a specific player.
 
 ## How to use
 ### Maven
