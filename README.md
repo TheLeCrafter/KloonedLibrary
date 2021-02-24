@@ -12,7 +12,7 @@ Add to your pom.xml following dependency:
 <dependency>
   <groupId>dev.thelecrafter.libraries</groupId>
   <artifactId>klooned</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
 </dependency> 
 ```
 ##### Without IntelliJ
