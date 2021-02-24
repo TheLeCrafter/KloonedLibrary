@@ -63,6 +63,79 @@ public class StringUtil {
     }
 
     /**
+     * The extended version of the rainbow colorizer (more detailed colors).
+     * @param original The string you want to colorize.
+     * @return The string that has been colorized.
+     */
+    public static String extendedRainbow(String original) {
+        ChatColor[] colors = new ChatColor[]{
+                ChatColor.of("#ff0000"),
+                ChatColor.of("#ff4000"),
+                ChatColor.of("#ff8000"),
+                ChatColor.of("#ffbf00"),
+                ChatColor.of("#ffff00"),
+                ChatColor.of("#bfff00"),
+                ChatColor.of("#80ff00"),
+                ChatColor.of("#40ff00"),
+                ChatColor.of("#00ff00"),
+                ChatColor.of("#00ff40"),
+                ChatColor.of("#00ff80"),
+                ChatColor.of("#00ffbf"),
+                ChatColor.of("#00ffff"),
+                ChatColor.of("#00bfff"),
+                ChatColor.of("#0080ff"),
+                ChatColor.of("#0040ff"),
+                ChatColor.of("#0000ff"),
+                ChatColor.of("#4000ff"),
+                ChatColor.of("#8000ff"),
+                ChatColor.of("#bf00ff"),
+                ChatColor.of("#ff00ff"),
+                ChatColor.of("#ff00bf"),
+                ChatColor.of("#ff0080"),
+                ChatColor.of("#ff0040")};
+        int i = 0;
+        StringBuilder rainbow = new StringBuilder();
+        for (char c : original.toCharArray()) {
+            if (c == ' ') {
+                rainbow.append(c);
+            } else {
+                rainbow.append(colors[i]).append(c);
+                i++;
+                if (i == colors.length) {
+                    i = 0;
+                }
+            }
+        }
+        return rainbow.toString();
+    }
+
+    /**
+     * The extended version of the rainbow colorizer (more detailed colors).
+     * @param original The list of strings you want to colorize.
+     * @return The list of strings that have been colorized.
+     */
+    public static List<String> extendedRainbow(List<String> original) {
+        List<String> rainbow = new ArrayList<>();
+        for (String string : original) {
+            rainbow.add(extendedRainbow(string));
+        }
+        return rainbow;
+    }
+
+    /**
+     * The extended version of the rainbow colorizer (more detailed colors).
+     * @param original The array of strings you want to colorize.
+     * @return The array of strings that have been colorized.
+     */
+    public static String[] extendedRainbow(String[] original) {
+        List<String> rainbow = new ArrayList<>();
+        for (String string : original) {
+            rainbow.add(extendedRainbow(string));
+        }
+        return rainbow.toArray(new String[]{});
+    }
+
+    /**
      *
      * @param original The original string to colorize.
      * @param pattern The original string will be colorized with this pattern.
