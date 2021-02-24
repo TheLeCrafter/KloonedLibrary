@@ -13,14 +13,14 @@ public class StringUtil {
      * @return The 'rainbowified' string.
      */
     public static String rainbow(String original) {
-        ChatColor[] colors = new ChatColor[]{ChatColor.RED,
-                ChatColor.of("#FF7F00"),
-                ChatColor.YELLOW,
-                ChatColor.GREEN,
-                ChatColor.BLUE,
-                ChatColor.of("#9400D3"),
-                ChatColor.of("#8B00FF")};
-
+        ChatColor[] colors = new ChatColor[]{
+                ChatColor.RED, // RED
+                ChatColor.of("#FF7F00"), // ORANGE
+                ChatColor.YELLOW, // YELLOW
+                ChatColor.GREEN, // GREEN
+                ChatColor.BLUE, // BLUE
+                ChatColor.of("#9400D3"), // INDIGO
+                ChatColor.of("#8B00FF")}; // VIOLET
         int i = 0;
         StringBuilder rainbow = new StringBuilder();
         for (char c : original.toCharArray()) {
@@ -28,9 +28,7 @@ public class StringUtil {
             else {
                 rainbow.append(colors[i]).append(c);
                 i++;
-                if (i == colors.length) {
-                    i = 0;
-                }
+                if (i == colors.length) i = 0;
             }
         }
         return rainbow.toString();
@@ -60,6 +58,60 @@ public class StringUtil {
             rainbow.add(rainbow(string));
         }
         return rainbow.toArray(new String[]{});
+    }
+
+    /**
+     *
+     * @param original The original string to colorize.
+     * @param pattern The original string will be colorized with this pattern.
+     * @return Returns the colorized string. If pattern.length is 0, returns the original string.
+     */
+    public static String colorizeWithPattern(String original, ChatColor[] pattern) {
+        if (pattern.length > 0) {
+            int i = 0;
+            StringBuilder colorized = new StringBuilder();
+            for (char c : original.toCharArray()) {
+                if (c == ' ') continue;
+                else {
+                    colorized.append(pattern[i]).append(c);
+                    i++;
+                    if (i == pattern.length) i = 0;
+                }
+            }
+            return colorized.toString();
+        } else return original;
+    }
+
+    /**
+     *
+     * @param original The original list of strings to colorize.
+     * @param pattern The original list of strings will be colorized with this pattern.
+     * @return Returns the colorized string. If pattern.length is 0, returns the original list of strings.
+     */
+    public static List<String> colorizeWithPattern(List<String> original, ChatColor[] pattern) {
+        if (pattern.length > 0) {
+            List<String> colorized = new ArrayList<>();
+            for (String string : original) {
+                colorized.add(colorizeWithPattern(string, pattern));
+            }
+            return colorized;
+        } else return original;
+    }
+
+    /**
+     *
+     * @param original The original string array to colorize.
+     * @param pattern The original string array will be colorized with this pattern.
+     * @return Returns the colorized string array. If pattern.length is 0, returns the original string array.
+     */
+    public static String[] colorizeWithPattern(String[] original, ChatColor[] pattern) {
+        if (pattern.length > 0) {
+            List<String> colorized = new ArrayList<>();
+            for (String string : original) {
+                colorized.add(colorizeWithPattern(string, pattern));
+            }
+            return colorized.toArray(new String[]{});
+        } else return original;
     }
 
 }
