@@ -8,7 +8,7 @@ The library will be extended with different functionalities (e.g. controlling ar
 ## How to use
 ### Maven
 Add to your pom.xml following dependency:
-```
+```XML
 <dependency>
   <groupId>dev.thelecrafter.libraries</groupId>
   <artifactId>klooned</artifactId>
