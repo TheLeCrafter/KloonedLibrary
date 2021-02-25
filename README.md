@@ -22,5 +22,5 @@ Open the Maven window. Click the arrow next to your project name and then `Lifec
 ### Gradle
 Gradle isn't currently supported. <br>
 ## Java docs
-The java docs can be found [here](https://thelecrafter.github.io/KloonedLibrary). <br><br>
+The java docs can be found [here](https://kloonedlibrary.thelecrafter.dev). <br><br>
 [![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://GitHub.com/TheLeCrafter/)
