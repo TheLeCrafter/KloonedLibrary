@@ -1,1 +1,0 @@
-typeSearchIndex = [{"l":"All Classes","u":"allclasses-index.html"},{"p":"dev.thelecrafter.libraries.klooned","l":"ColoredStringBuilder"},{"p":"dev.thelecrafter.libraries.klooned","l":"FollowingArmorstands"},{"p":"dev.thelecrafter.libraries.klooned","l":"StringUtil"}];updateSearchResults();
