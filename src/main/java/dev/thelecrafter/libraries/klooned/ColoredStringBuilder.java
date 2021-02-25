@@ -51,7 +51,7 @@ public class ColoredStringBuilder {
 
     /**
      * Colorize the string with the rainbow pattern.
-     * @param isExtendedRainbow The extended rainbow pattern is more detailed.
+     * @param  isExtendedRainbow The extended rainbow pattern is more detailed.
      * @return Returns the colorized string.
      */
     public String colorizeRainbow(boolean isExtendedRainbow) {

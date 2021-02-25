@@ -15,34 +15,36 @@ import java.util.Set;
 
 public class FollowingArmorstands {
 
-    private static final Map<Player, ArmorStand> armorStandMap = new HashMap<>();
-    private static final Set<BukkitTask> tasks = new HashSet<>();
+    /**
+     * A map of all currently active armor stands.
+     */
+    private static final Map<Player, ArmorStand> ARMOR_STAND_MAP = new HashMap<>();
+    /**
+     * A set of all currently active tasks that control the player following armor stands.
+     */
+    private static final Set<BukkitTask> TASKS = new HashSet<>();
 
     /**
      * Let an armor stand follow a given player.
-     * @param player The player the armor stand will follow.
-     * @param stand The armor stand that will follow the player.
-     * @param plugin The plugin that is used to schedule tasks.
-     * @param radius If the armor stand is outside of the radius, it will follow the player until its back in.
+     *
+     * @param  player The player the armor stand will follow.
+     * @param  stand The armor stand that will follow the player.
+     * @param  plugin The plugin that is used to schedule tasks.
+     * @param  radius If the armor stand is outside of the radius, it will follow the player until its back in.
      * @return Returns if the method was successfully executed.
      */
     public static boolean addFollowingArmorStand(Player player, ArmorStand stand, Plugin plugin, int radius) {
         if (stand.isDead()) return false;
-        armorStandMap.put(player, stand);
+        ARMOR_STAND_MAP.put(player, stand);
         BukkitTask task = new BukkitRunnable() {
             @Override
             public void run() {
-                if (stand.isDead()) {
-                    tasks.remove(this);
+                if (stand.isDead() || !player.isOnline()) {
+                    TASKS.remove(this);
                     this.cancel();
                     return;
                 }
-                if (!player.isOnline()) {
-                    tasks.remove(this);
-                    this.cancel();
-                    return;
-                }
-                if (armorStandMap.get(player) == null) this.cancel();
+                if (ARMOR_STAND_MAP.get(player) == null) this.cancel();
                 if (player.getLocation().distance(stand.getLocation()) > radius) {
                     Vector direction = player.getLocation().subtract(stand.getLocation()).clone().toVector();
                     Location location = stand.getLocation().add(direction.clone().multiply(0.1));
@@ -51,18 +53,19 @@ public class FollowingArmorstands {
                 }
             }
         }.runTaskTimer(plugin, 0, 1);
-        tasks.add(task);
+        TASKS.add(task);
         return true;
     }
 
     /**
      * Remove an armor stand from following a player. The armor stand will not be deleted.
-     * @param player The player the armor stand is currently following.
+     *
+     * @param  player The player the armor stand is currently following.
      * @return Returns if the method was successfully executed.
      */
     public static boolean removeFollowingArmorStand(Player player) {
-        if (armorStandMap.get(player) == null) return false;
-        return armorStandMap.remove(player, armorStandMap.get(player));
+        if (ARMOR_STAND_MAP.get(player) == null) return false;
+        return ARMOR_STAND_MAP.remove(player, ARMOR_STAND_MAP.get(player));
     }
 
 }

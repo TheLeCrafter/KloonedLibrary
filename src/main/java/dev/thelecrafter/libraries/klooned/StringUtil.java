@@ -6,25 +6,54 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StringUtil {
+
     /**
-     * @author TheLeCrafter
+     * The pattern of the rainbow method.
      */
+    public static final ChatColor[] RAINBOW_PATTERN = new ChatColor[]{
+            ChatColor.RED, // RED
+            ChatColor.of("#FF7F00"), // ORANGE
+            ChatColor.YELLOW, // YELLOW
+            ChatColor.GREEN, // GREEN
+            ChatColor.BLUE, // BLUE
+            ChatColor.of("#9400D3"), // INDIGO
+            ChatColor.of("#8B00FF")}; // VIOLET
+    /**
+     * The pattern of the extended rainbow method.
+     */
+    public static final ChatColor[] EXTENDED_RAINBOW_PATTERN = new ChatColor[]{
+            ChatColor.of("#ff0000"),
+            ChatColor.of("#ff4000"),
+            ChatColor.of("#ff8000"),
+            ChatColor.of("#ffbf00"),
+            ChatColor.of("#ffff00"),
+            ChatColor.of("#bfff00"),
+            ChatColor.of("#80ff00"),
+            ChatColor.of("#40ff00"),
+            ChatColor.of("#00ff00"),
+            ChatColor.of("#00ff40"),
+            ChatColor.of("#00ff80"),
+            ChatColor.of("#00ffbf"),
+            ChatColor.of("#00ffff"),
+            ChatColor.of("#00bfff"),
+            ChatColor.of("#0080ff"),
+            ChatColor.of("#0040ff"),
+            ChatColor.of("#0000ff"),
+            ChatColor.of("#4000ff"),
+            ChatColor.of("#8000ff"),
+            ChatColor.of("#bf00ff"),
+            ChatColor.of("#ff00ff"),
+            ChatColor.of("#ff00bf"),
+            ChatColor.of("#ff0080"),
+            ChatColor.of("#ff0040")};
 
     /**
      * Colorize your string in rainbow colors.
      *
-     * @param original The string you want to colorize.
+     * @param  original The string you want to colorize.
      * @return The colorized string.
      */
     public static String rainbow(String original) {
-        ChatColor[] colors = new ChatColor[]{
-                ChatColor.RED, // RED
-                ChatColor.of("#FF7F00"), // ORANGE
-                ChatColor.YELLOW, // YELLOW
-                ChatColor.GREEN, // GREEN
-                ChatColor.BLUE, // BLUE
-                ChatColor.of("#9400D3"), // INDIGO
-                ChatColor.of("#8B00FF")}; // VIOLET
         int i = 0;
         StringBuilder rainbow = new StringBuilder();
         for (char c : original.toCharArray()) {
@@ -32,9 +61,9 @@ public class StringUtil {
                 rainbow.append(c);
             }
             else {
-                rainbow.append(colors[i]).append(c);
+                rainbow.append(RAINBOW_PATTERN[i]).append(c);
                 i++;
-                if (i == colors.length) i = 0;
+                if (i == RAINBOW_PATTERN.length) i = 0;
             }
         }
         return rainbow.toString();
@@ -43,8 +72,8 @@ public class StringUtil {
     /**
      * Colorize your list of strings in rainbow colors.
      *
-     * @see #rainbow(String) 
-     * @param original The list of strings you want to colorize.
+     * @see    #rainbow(String)
+     * @param  original The list of strings you want to colorize.
      * @return The list of strings that have been colorized.
      */
     public static List<String> rainbow(List<String> original) {
@@ -58,8 +87,8 @@ public class StringUtil {
     /**
      * Colorize an array of strings in rainbow colors.
      *
-     * @see #rainbow(String) 
-     * @param original The array of strings you want to colorize.
+     * @see    #rainbow(String)
+     * @param  original The array of strings you want to colorize.
      * @return The array of strings that have been colorized.
      */
     public static String[] rainbow(String[] original) {
@@ -73,44 +102,19 @@ public class StringUtil {
     /**
      * The extended version of the rainbow colorizer (more detailed colors).
      *
-     * @param original The string you want to colorize.
+     * @param  original The string you want to colorize.
      * @return The string that has been colorized.
      */
     public static String extendedRainbow(String original) {
-        ChatColor[] colors = new ChatColor[]{
-                ChatColor.of("#ff0000"),
-                ChatColor.of("#ff4000"),
-                ChatColor.of("#ff8000"),
-                ChatColor.of("#ffbf00"),
-                ChatColor.of("#ffff00"),
-                ChatColor.of("#bfff00"),
-                ChatColor.of("#80ff00"),
-                ChatColor.of("#40ff00"),
-                ChatColor.of("#00ff00"),
-                ChatColor.of("#00ff40"),
-                ChatColor.of("#00ff80"),
-                ChatColor.of("#00ffbf"),
-                ChatColor.of("#00ffff"),
-                ChatColor.of("#00bfff"),
-                ChatColor.of("#0080ff"),
-                ChatColor.of("#0040ff"),
-                ChatColor.of("#0000ff"),
-                ChatColor.of("#4000ff"),
-                ChatColor.of("#8000ff"),
-                ChatColor.of("#bf00ff"),
-                ChatColor.of("#ff00ff"),
-                ChatColor.of("#ff00bf"),
-                ChatColor.of("#ff0080"),
-                ChatColor.of("#ff0040")};
         int i = 0;
         StringBuilder rainbow = new StringBuilder();
         for (char c : original.toCharArray()) {
             if (c == ' ') {
                 rainbow.append(c);
             } else {
-                rainbow.append(colors[i]).append(c);
+                rainbow.append(EXTENDED_RAINBOW_PATTERN[i]).append(c);
                 i++;
-                if (i == colors.length) {
+                if (i == EXTENDED_RAINBOW_PATTERN.length) {
                     i = 0;
                 }
             }
@@ -121,9 +125,9 @@ public class StringUtil {
     /**
      * The extended version of the rainbow colorizer (more detailed colors).
      *
-     * @param original The list of strings you want to colorize.
+     * @see    #extendedRainbow(String)
+     * @param  original The list of strings you want to colorize.
      * @return The list of strings that have been colorized.
-     * @see #extendedRainbow(String) 
      */
     public static List<String> extendedRainbow(List<String> original) {
         List<String> rainbow = new ArrayList<>();
@@ -136,9 +140,9 @@ public class StringUtil {
     /**
      * The extended version of the rainbow colorizer (more detailed colors).
      *
-     * @param original The array of strings you want to colorize.
+     * @see    #extendedRainbow(String)
+     * @param  original The array of strings you want to colorize.
      * @return The array of strings that have been colorized.
-     * @see #extendedRainbow(String)
      */
     public static String[] extendedRainbow(String[] original) {
         List<String> rainbow = new ArrayList<>();
@@ -151,8 +155,8 @@ public class StringUtil {
     /**
      * Colorize an string with an given pattern.
      *
-     * @param original The original string to colorize.
-     * @param pattern The original string will be colorized with this pattern.
+     * @param  original The original string to colorize.
+     * @param  pattern The original string will be colorized with this pattern.
      * @return Returns the colorized string. If pattern.length is 0, returns the original string.
      */
     public static String colorizeWithPattern(String original, ChatColor[] pattern) {
@@ -176,9 +180,9 @@ public class StringUtil {
     /**
      * Colorize an list of strings with an given pattern.
      *
-     * @see #colorizeWithPattern(String, ChatColor[])
-     * @param original The original list of strings to colorize.
-     * @param pattern The original list of strings will be colorized with this pattern.
+     * @see    #colorizeWithPattern(String, ChatColor[])
+     * @param  original The original list of strings to colorize.
+     * @param  pattern The original list of strings will be colorized with this pattern.
      * @return Returns the colorized string. If pattern.length is 0, returns the original list of strings.
      */
     public static List<String> colorizeWithPattern(List<String> original, ChatColor[] pattern) {
@@ -194,9 +198,9 @@ public class StringUtil {
     /**
      * Colorize an array of strings with an given pattern.
      *
-     * @see #colorizeWithPattern(String, ChatColor[])
-     * @param original The original string array to colorize.
-     * @param pattern The original string array will be colorized with this pattern.
+     * @see    #colorizeWithPattern(String, ChatColor[])
+     * @param  original The original string array to colorize.
+     * @param  pattern The original string array will be colorized with this pattern.
      * @return Returns the colorized string array. If pattern.length is 0, returns the original string array.
      */
     public static String[] colorizeWithPattern(String[] original, ChatColor[] pattern) {
