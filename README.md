@@ -2,7 +2,7 @@
 [![Java CI with Maven](https://github.com/TheLeCrafter/KloonedLibrary/actions/workflows/maven.yml/badge.svg)](https://github.com/TheLeCrafter/KloonedLibrary/actions/workflows/maven.yml) 
 [![GitHub issues](https://img.shields.io/github/issues/TheLeCrafter/KloonedLibrary.svg)](https://GitHub.com/TheLeCrafter/KloonedLibrary/issues/) 
 [![GitHub issues-closed](https://img.shields.io/github/issues-closed/TheLeCrafter/KloonedLibrary.svg)](https://GitHub.com/TheLeCrafter/KloonedLibrary/issues?q=is%3Aissue+is%3Aclosed) <br>
-![KloonedLibrary image by RedstoneFlo](https://cdn.discordapp.com/attachments/431816747880939521/814532210161876992/KloonedLibrary.png) <br>
+![KloonedLibrary image by RedstoneFlo](https://cdn.discordapp.com/attachments/431816747880939521/814532210161876992/KloonedLibrary.png) (Thank you RedstoneFlo for this nice image)<br>
 A library designed for the Hypixel admin Minikloon. This library can mostly be used to colorize strings for a Minecraft Spigot/Paper plugin. <br>
 You can also use this library to control armor stands that should follow a specific player in a specific way.
 
