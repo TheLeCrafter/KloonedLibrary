@@ -2,6 +2,9 @@ package dev.thelecrafter.libraries.klooned;
 
 import net.md_5.bungee.api.ChatColor;
 
+/**
+ * An builder for colored strings.
+ */
 public class ColoredStringBuilder {
 
     private final String original;
@@ -18,6 +21,7 @@ public class ColoredStringBuilder {
     /**
      * Set the pattern of the string (only net.md_5.bungee.api.ChatColor).
      * @param pattern The pattern of the builder.
+     * @return        Returns the updated ColoredStringBuilder
      */
     public ColoredStringBuilder setPattern(ChatColor[] pattern) {
         this.pattern = pattern;
@@ -27,6 +31,7 @@ public class ColoredStringBuilder {
     /**
      * Set the pattern of the string (only net.md_5.bungee.api.ChatColor).
      * @param pattern The pattern of the builder.
+     * @return        Returns the updated ColoredStringBuilder
      */
     public ColoredStringBuilder setPattern(ChatColor pattern) {
         this.pattern = new ChatColor[]{pattern};

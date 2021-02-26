@@ -13,6 +13,9 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * Let armor stands follow an specific player.
+ */
 public class FollowingArmorstands {
 
     /**

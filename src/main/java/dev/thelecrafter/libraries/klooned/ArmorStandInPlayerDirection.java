@@ -11,6 +11,9 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * Teleport armor stands in an offset the a specific player direction.
+ */
 public class ArmorStandInPlayerDirection {
 
     /**

@@ -9,6 +9,9 @@ import org.bukkit.scheduler.BukkitTask;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Let armor stands rotate. (SPEEEEN)
+ */
 public class RotatingArmorStands {
 
     /**

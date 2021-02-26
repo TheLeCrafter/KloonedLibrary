@@ -5,6 +5,9 @@ import net.md_5.bungee.api.ChatColor;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * An easy to use utility class for colored strings.
+ */
 public class StringUtil {
 
     /**
