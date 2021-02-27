@@ -20,11 +20,11 @@ public class SafelyTeleport {
      * @return          Returns the safest location.
      */
     public static Location getSafeLocation(Location location, Vector direction, int distance) {
-        Location tpLocation = location.clone();
+        Location tpLocation = location.clone().add(0.5, 0, 0.5);
         for (int i = 1; i < distance; i++) {
             Location cache = location.add(direction.clone().clone().multiply(i));
             if (!cache.getBlock().isSolid() || !cache.clone().clone().add(0, 1, 0).getBlock().isSolid()) {
-                tpLocation = cache;
+                tpLocation = cache.clone().add(0.5, 0, 0.5);
             } else return tpLocation;
         }
         return tpLocation;
