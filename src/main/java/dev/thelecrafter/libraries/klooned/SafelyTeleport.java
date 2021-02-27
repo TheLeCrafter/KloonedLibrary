@@ -24,7 +24,7 @@ public class SafelyTeleport {
         for (int i = 1; i < distance + 1; i++) {
             Location cache = location.clone().add(direction.clone().multiply(i));
             if (!cache.getBlock().isSolid() || !cache.clone().clone().add(0, 1, 0).getBlock().isSolid()) {
-                tpLocation = cache;
+                tpLocation = cache.add(0, 1, 0).setDirection(direction);
             } else return tpLocation;
         }
         return tpLocation;
