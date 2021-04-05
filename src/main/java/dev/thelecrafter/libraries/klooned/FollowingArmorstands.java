@@ -53,12 +53,14 @@ public class FollowingArmorstands {
                     this.cancel();
                     return;
                 }
-                if (player.getLocation().distance(stand.getLocation()) > radius) {
-                    Vector direction = player.getLocation().subtract(stand.getLocation()).clone().toVector();
-                    Location location = stand.getLocation().add(direction.clone().multiply(0.1));
-                    location.setDirection(direction);
-                    stand.teleport(location);
-                }
+                if (player.getLocation().getWorld().equals(ARMOR_STAND_MAP.get(player).getWorld())) {
+                    if (player.getLocation().distance(stand.getLocation()) > radius) {
+                        Vector direction = player.getLocation().subtract(stand.getLocation()).clone().toVector();
+                        Location location = stand.getLocation().add(direction.clone().multiply(0.1));
+                        location.setDirection(direction);
+                        stand.teleport(location);
+                    }
+                } else ARMOR_STAND_MAP.get(player).teleport(player);
             }
         }.runTaskTimer(plugin, 0, 1);
         TASKS.add(task);
