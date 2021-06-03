@@ -13,7 +13,7 @@ public class StringUtil {
     /**
      * The pattern of the rainbow method.
      */
-    public static final ChatColor[] RAINBOW_PATTERN = new ChatColor[]{
+    protected static final ChatColor[] RAINBOW_PATTERN = new ChatColor[]{
             ChatColor.RED, // RED
             ChatColor.of("#FF7F00"), // ORANGE
             ChatColor.YELLOW, // YELLOW
@@ -24,7 +24,7 @@ public class StringUtil {
     /**
      * The pattern of the extended rainbow method.
      */
-    public static final ChatColor[] EXTENDED_RAINBOW_PATTERN = new ChatColor[]{
+    protected static final ChatColor[] EXTENDED_RAINBOW_PATTERN = new ChatColor[]{
             ChatColor.of("#ff0000"),
             ChatColor.of("#ff4000"),
             ChatColor.of("#ff8000"),

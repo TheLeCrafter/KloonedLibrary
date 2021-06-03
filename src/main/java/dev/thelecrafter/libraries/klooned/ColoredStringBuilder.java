@@ -24,7 +24,7 @@ public class ColoredStringBuilder {
      * @return        Returns the updated ColoredStringBuilder
      */
     public ColoredStringBuilder setPattern(ChatColor[] pattern) {
-        this.pattern = pattern;
+        this.pattern = pattern.clone();
         return this;
     }
 
@@ -43,7 +43,7 @@ public class ColoredStringBuilder {
      * @return Returns the pattern of the string.
      */
     public ChatColor[] getPattern() {
-        return pattern;
+        return pattern.clone();
     }
 
     /**

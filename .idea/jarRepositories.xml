@@ -22,6 +22,11 @@
       <option name="url" value="https://papermc.io/repo/repository/maven-public/" />
     </remote-repository>
     <remote-repository>
+      <option name="id" value="github" />
+      <option name="name" value="GitHub TheLeCrafter Apache Maven Packages" />
+      <option name="url" value="https://maven.pkg.github.com/TheLeCrafter/*" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="jboss.community" />
       <option name="name" value="JBoss Community repository" />
       <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
