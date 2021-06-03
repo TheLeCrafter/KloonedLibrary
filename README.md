@@ -21,7 +21,14 @@ Open a terminal in your project directory and type `mvn install`.
 ##### With IntelliJ
 Open the Maven window. Click the arrow next to your project name and then `Lifecycle`. Click on `install`.
 ### Gradle
-Gradle isn't currently supported. <br>
+```gradle
+repositories {
+  mavencentral()
+}
+dependencies {
+  compileOnly 'dev.thelecrafter.libraries:klooned:VERSION'
+}
+```
 ## Java docs
 The java docs can be found [here](https://kloonedlibrary.thelecrafter.dev). <br><br>
 [![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://GitHub.com/TheLeCrafter/)
