@@ -23,7 +23,7 @@ Open the Maven window. Click the arrow next to your project name and then `Lifec
 ### Gradle
 ```gradle
 repositories {
-  mavencentral()
+  mavenCentral()
 }
 dependencies {
   compileOnly 'dev.thelecrafter.libraries:klooned:VERSION'
